@@ -4,6 +4,13 @@
 <title>Compare Hotel Prices - Sun Rich Travel</title>
 </head>
 <body>
-<iframe src="http://hotels.sunrichtravel.com/mobile=1" height="100%" width="100%" frameborder="0"></iframe>
+<iframe src="http://hotels.sunrichtravel.com/mobile=1" width='100%' scrolling='auto' frameBorder='0' id='theiFrame' onLoad='fixiFrame();'></iframe>
+
+function fixiFrame () {
+   if ((android) && (androidVersion > 3)) {
+      iFrameContentHeight = document.getElementById('theiFrame').contentDocument.body.offsetHeight;
+      document.getElementById('theiFrame').style.height = iFrameContentHeight + 'px';
+   }
+}
 </body>
 </html>
